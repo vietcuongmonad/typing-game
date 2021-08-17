@@ -2,15 +2,18 @@ import React, {useState, useEffect, useRef} from "react"
 import "./App.css"
 
 function App() {
-    const TIME_LIMIT = 10
+    const TIME_INTIAL = 10
+    const TIME_LIMIT = 360
 
-    const [timer, setOurTimer] = useState(TIME_LIMIT)
+    const [timer, setOurTimer] = useState(TIME_INTIAL)
     const [text, setText] = useState("")
     const [wordCount, setWordCount] = useState(0)
     const [flag, setFlag] = useState(false)
+    const [fullTime, setFullTime] = useState(TIME_INTIAL)
     const textRef = useRef(null)
 
     function handleChange(event) {
+        event.preventDefault()
         setText(event.target.value)
     }
 
@@ -21,7 +24,7 @@ function App() {
     }
 
     function startGame() {
-        setOurTimer(TIME_LIMIT)
+        setOurTimer(fullTime)
         setText("")
         setWordCount(0)
         setFlag(true)
@@ -42,15 +45,39 @@ function App() {
         }
     }, [timer, flag])
 
+
+    function changeFullTime(event) {
+        const num = event.target.value
+        if (num > TIME_LIMIT) {
+            setFullTime(TIME_LIMIT)
+        } else if (num < 1) setFullTime(1)
+        else setFullTime(num)
+    }
+
     return (
         <div>
             <h1>How fast do you think and type your own paragraph?</h1>
+            <h2>Don't spam, the content should make sense! </h2>
             <textarea
                 disabled={!flag}
                 value={text}
                 onChange={handleChange}
                 ref = {textRef}
                 />
+
+            <div className="timing">
+                <span>Set time remaining (1 - 360 secs): </span>
+
+                <input
+                    type="number"
+                    value={fullTime}
+                    onChange={changeFullTime}
+                    min="1"
+                    max={TIME_LIMIT}
+                    step="1"
+                    />
+                <span> sec(s) </span>
+            </div>
 
             <h3>Time remaining: {timer}</h3>
 

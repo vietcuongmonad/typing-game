@@ -36,6 +36,16 @@ h3 {
     font-size: 30px;
 }
 
+.timing {
+    font-size: 25px;
+    text-align: center;
+}
+
+.timing > input {
+    font-size: 20px;
+    background: #B10DC9;
+}
+
 textarea {
     font-family: 'Press Start 2P', cursive;
     font-size: 33px;
