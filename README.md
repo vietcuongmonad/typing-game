@@ -15,4 +15,6 @@ You will also see any lint errors in the console.
 
 ### Web links
 
+The loading time is quite long but the website is definitely working, please be patience!
+
 https://typing-game-testing.herokuapp.com/
