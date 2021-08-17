@@ -11,4 +11,4 @@ You will also see any lint errors in the console.
 
 ### Demonstration
 
-![Alt text](Demonstration.mov)
+![Alt text](Demonstration.gif)
