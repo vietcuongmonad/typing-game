@@ -15,6 +15,6 @@ You will also see any lint errors in the console.
 
 ### Web links
 
-The loading time is quite long but the website is definitely working, please be patience!
+The loading time is quite long (because of not using premium package of heroku, sorry I'm poor). Please be patience, the website should be working fine!
 
 https://typing-game-testing.herokuapp.com/
